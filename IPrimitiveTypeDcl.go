@@ -117,7 +117,7 @@ var PrimitiveTypeNames = []string{
 
 type IPrimitiveTypeDcl interface {
 	IYaccNode
-	//IsPrimitive() bool
+
 	PrimitiveType() PrimitiveType
 	//IsNative() bool
 	//NativeMapping() string

@@ -7,21 +7,18 @@ type primitiveType struct {
 	nativeMapping string
 }
 
-func (t *primitiveType) NativeMapping() string {
-	return t.nativeMapping
-}
+//func (t *primitiveType) NativeMapping() string {
+//	return t.nativeMapping
+//}
 
-func (t *primitiveType) IsNative() bool {
-	return t.isNative
-}
+//func (t *primitiveType) IsNative() bool {
+//	return t.isNative
+//}
 
 func (t *primitiveType) PrimitiveType() PrimitiveType {
 	return t.primitiveType
 }
 
-func (t *primitiveType) IsPrimitive() bool {
-	return true
-}
 
 func NewPrimitiveNode(
 	idlReference string,
