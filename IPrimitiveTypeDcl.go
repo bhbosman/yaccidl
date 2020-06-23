@@ -117,10 +117,10 @@ var PrimitiveTypeNames = []string{
 
 type IPrimitiveTypeDcl interface {
 	IYaccNode
-	IsPrimitive() bool
+	//IsPrimitive() bool
 	PrimitiveType() PrimitiveType
-	IsNative() bool
-	NativeMapping() string
+	//IsNative() bool
+	//NativeMapping() string
 }
 
 var reversedPrimitiveLookup map[string]PrimitiveType
