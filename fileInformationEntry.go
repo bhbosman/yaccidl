@@ -2,6 +2,7 @@ package yaccidl
 
 import (
 	"fmt"
+	"go.uber.org/fx"
 	"os/user"
 	"path/filepath"
 	"strings"
@@ -23,6 +24,12 @@ func NewFileInformation() *FileInformation {
 		counter: make(map[string]int),
 	}
 	return fi
+}
+
+func ProvideFileInformation() fx.Option {
+	return fx.Provide(func() *FileInformation{
+		return NewFileInformation()
+	})
 }
 
 func (self *FileInformation) AddPath(path string) FileInformationEntry {
