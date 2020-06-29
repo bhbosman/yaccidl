@@ -19,7 +19,6 @@ func (t *primitiveType) PrimitiveType() PrimitiveType {
 	return t.primitiveType
 }
 
-
 func NewPrimitiveNode(
 	idlReference string,
 	PrimitiveType PrimitiveType,

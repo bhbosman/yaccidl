@@ -27,7 +27,7 @@ func NewFileInformation() *FileInformation {
 }
 
 func ProvideFileInformation() fx.Option {
-	return fx.Provide(func() *FileInformation{
+	return fx.Provide(func() *FileInformation {
 		return NewFileInformation()
 	})
 }
