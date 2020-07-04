@@ -6,6 +6,7 @@ import (
 	"os/user"
 	"path/filepath"
 	"strings"
+	"sync"
 )
 
 type FileInformationEntry struct {
@@ -16,6 +17,7 @@ type FileInformationEntry struct {
 type FileInformation struct {
 	entries map[string]FileInformationEntry
 	counter map[string]int
+	mutex sync.Mutex
 }
 
 func NewFileInformation() *FileInformation {
@@ -33,6 +35,8 @@ func ProvideFileInformation() fx.Option {
 }
 
 func (self *FileInformation) AddPath(path string) FileInformationEntry {
+	self.mutex.Lock()
+	defer  self.mutex.Unlock()
 	if entry, ok := self.entries[path]; ok {
 		return entry
 	}
